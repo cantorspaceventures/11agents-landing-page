@@ -1,26 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #050505;
+  --foreground: #ededed;
+  
+  --color-neon-cyan: #00f0ff;
+  --color-neon-purple: #9d00ff;
+  --color-slate-gray: #64748b;
+  --color-high-alert: #ff2a00;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-sovereign: #050505;
+  --color-neon-cyan: var(--color-neon-cyan);
+  --color-neon-purple: var(--color-neon-purple);
+  --color-slate-gray: var(--color-slate-gray);
+  --color-high-alert: var(--color-high-alert);
+  
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
