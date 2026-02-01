@@ -3,7 +3,7 @@
 :root {
   --background: #050505;
   --foreground: #ededed;
-  
+
   --color-neon-cyan: #00f0ff;
   --color-neon-purple: #9d00ff;
   --color-slate-gray: #64748b;
@@ -18,7 +18,7 @@
   --color-neon-purple: var(--color-neon-purple);
   --color-slate-gray: var(--color-slate-gray);
   --color-high-alert: var(--color-high-alert);
-  
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -27,4 +27,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
 }
