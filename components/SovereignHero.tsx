@@ -7,91 +7,9 @@ import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
 
-const ORBIT_RADIUS = 3.5;
+import { Core, AgentOrb } from './Core3D';
+
 const NUM_AGENTS = 11;
-
-/**
- * The Central Sovereign Core - enhanced with Voronoi-like distortion
- */
-function Core() {
-    const meshRef = useRef<THREE.Mesh>(null);
-
-    useFrame((state, delta) => {
-        if (meshRef.current) {
-            meshRef.current.rotation.y += delta * 0.1;
-            meshRef.current.rotation.x += delta * 0.05;
-        }
-    });
-
-    return (
-        <group>
-            <mesh ref={meshRef}>
-                <icosahedronGeometry args={[1.4, 2]} />
-                <MeshDistortMaterial
-                    color="#000000"
-                    emissive="#00f0ff"
-                    emissiveIntensity={0.15}
-                    roughness={0.1}
-                    metalness={1}
-                    wireframe
-                    distort={0.4} // Distorts the mesh to create organic movement
-                    speed={2}
-                />
-            </mesh>
-            {/* Inner High-Energy Core */}
-            <mesh scale={0.6}>
-                <sphereGeometry args={[1, 32, 32]} />
-                <meshBasicMaterial color="#00f0ff" transparent opacity={0.05} />
-            </mesh>
-        </group>
-    );
-}
-
-/**
- * Individual Orbiting Agent Orb
- */
-function AgentOrb({ index, total }: { index: number; total: number }) {
-    const orbRef = useRef<THREE.Group>(null);
-    // Calculate initial position on the circle
-    const angle = (index / total) * Math.PI * 2;
-    const position: [number, number, number] = [
-        Math.cos(angle) * ORBIT_RADIUS,
-        0,
-        Math.sin(angle) * ORBIT_RADIUS,
-    ];
-
-    useFrame((state) => {
-        if (orbRef.current) {
-            // Orbit animation
-            const time = state.clock.getElapsedTime();
-            const speed = 0.2;
-            const currentAngle = angle + time * speed;
-
-            orbRef.current.position.x = Math.cos(currentAngle) * ORBIT_RADIUS;
-            orbRef.current.position.z = Math.sin(currentAngle) * ORBIT_RADIUS;
-
-            // Floating wave effect on Y axis
-            orbRef.current.position.y = Math.sin(time * 0.5 + index) * 0.5;
-        }
-    });
-
-    return (
-        <group ref={orbRef} position={position}>
-            <mesh>
-                <sphereGeometry args={[0.15, 32, 32]} />
-                <meshStandardMaterial
-                    color="#9d00ff"
-                    emissive="#9d00ff"
-                    emissiveIntensity={1.5}
-                    toneMapped={false}
-                    transparent
-                    opacity={0.6}
-                    roughness={0.7}
-                />
-            </mesh>
-        </group>
-    );
-}
 
 /**
  * The 3D Scene Composition
@@ -187,7 +105,12 @@ export default function SovereignHero() {
                 transition={{ duration: 2, repeat: Infinity }}
             >
                 <span className="text-[10px] text-slate-600 font-mono uppercase tracking-widest">Initialising System</span>
-                <div className="w-[1px] h-12 bg-gradient-to-b from-cyan-500/0 via-cyan-500 to-cyan-500/0" />
+                <div className="flex flex-col items-center gap-1">
+                    <div className="w-[1px] h-8 bg-gradient-to-b from-cyan-500/0 via-cyan-500 to-cyan-500/0" />
+                    <svg className="w-4 h-4 text-cyan-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7-7-7" />
+                    </svg>
+                </div>
             </motion.div>
         </section>
     );

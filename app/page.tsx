@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import SovereignHero from "@/components/SovereignHero";
 import ManifestoScroll from "@/components/ManifestoScroll";
+import SovereignConcept from "@/components/SovereignConcept";
 import BentoGrid from "@/components/BentoGrid";
 import Footer from "@/components/Footer";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Navbar />
       <SovereignHero />
       <ManifestoScroll />
+      <SovereignConcept />
       <BentoGrid />
       <Footer />
     </main>
