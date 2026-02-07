@@ -76,14 +76,14 @@ export default function Footer() {
                                     }`}
                             >
                                 <span className="flex items-center justify-center gap-2">
-                                    {loading ? '[ TRANSMITTING... ]' : (submitted ? '[ ACCESS_GRANTED ]' : '[ INITIALIZE_11AGENTS ]')}
+                                    {loading ? '[ TRANSMITTING... ]' : (submitted ? '[ ACCESS_GRANTED ]' : '[ INITIALIZE_FOUNDERSXI ]')}
                                 </span>
                             </button>
                         </form>
                     </div>
 
                     <div className="mt-20 flex flex-col md:flex-row items-center justify-between text-xs text-slate-700 font-mono uppercase tracking-widest border-t border-slate-900 pt-8">
-                        <span>11agents.xyz // SYSTEM_READY</span>
+                        <span>foundersxi.com // SYSTEM_READY</span>
                         <span className="mt-2 md:mt-0 flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                             All Systems Nominal

@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "11agents | Scale Without Humans",
+  title: "foundersxi | Scale Without Humans",
   description: "The Sovereign Startup. Deploy a synthetic C-Suite of 11 specialized AI agents.",
 };
 

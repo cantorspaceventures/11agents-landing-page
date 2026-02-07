@@ -63,7 +63,7 @@ export default function SovereignConcept() {
                         transition={{ delay: 0.2 }}
                         className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-mono"
                     >
-                        11agents is not a chatbot. It is not a tool. <br />
+                        foundersxi is not a chatbot. It is not a tool. <br />
                         <span className="text-cyan-400">It is a Synthetic C-Suite.</span>
                     </motion.p>
                 </div>

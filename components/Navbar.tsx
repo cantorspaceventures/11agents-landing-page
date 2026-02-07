@@ -16,7 +16,7 @@ export default function Navbar() {
                 className="flex items-center gap-3"
             >
                 <span className={`font-mono text-sm tracking-widest font-bold ${isFounderMode ? 'text-red-500' : 'text-green-500 animate-blink'}`}>
-                    11agents.xyz // SYSTEM_READY
+                    foundersxi.com // SYSTEM_READY
                 </span>
                 <span className={`w-2 h-2 rounded-full ${isFounderMode ? 'bg-red-500 animate-ping' : 'bg-green-500 animate-pulse'}`} />
             </motion.div>
